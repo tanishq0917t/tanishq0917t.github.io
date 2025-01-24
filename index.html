@@ -308,8 +308,7 @@
 </head>
 
 <body
-    class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300"
-    onload="getCount()"></body>
+    class="bg-light dark:bg-dark text-dark dark:text-white min-h-screen flex flex-col font-['Inter'] transition-colors duration-300"></body>
 <div class="absolute top-8 right-8 z-10">
     <button id="themeToggle"
         class="p-2 rounded-lg bg-dark dark:bg-light text-light dark:text-dark w-10 h-10 flex items-center justify-center">
@@ -515,23 +514,23 @@
     <script>
 
 
-        function getCount() {
-            const viewCountElement = document.getElementById('view-count');
-            fetch('https://djsaxrk0vf.execute-api.ap-south-1.amazonaws.com/default/manageViewsCount', {
-                method: 'POST',  // Specify the POST method
-                headers: {
-                    'Content-Type': 'application/json'  // Ensure the request body is JSON
-                }
-            })
-                .then(response => response.json())
-                .then(data => {
-                    viewCountElement.innerText = `Portfolio Views: ${data.views}`;
-                    console.log(data.views);
-                })
-                .catch(error => {
-                    console.error('Error fetching view count:', error);
-                });
-        }
+        // function getCount() {
+        //     const viewCountElement = document.getElementById('view-count');
+        //     fetch('lambda url', {
+        //         method: 'POST',  // Specify the POST method
+        //         headers: {
+        //             'Content-Type': 'application/json'  // Ensure the request body is JSON
+        //         }
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             viewCountElement.innerText = `Portfolio Views: ${data.views}`;
+        //             console.log(data.views);
+        //         })
+        //         .catch(error => {
+        //             console.error('Error fetching view count:', error);
+        //         });
+        // }
 
 
 
