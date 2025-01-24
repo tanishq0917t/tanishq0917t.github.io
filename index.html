@@ -361,13 +361,13 @@
                 </div>
                 <div class="max-w-2xl text-center md:text-left">
                     <p class="about-text font-space-mono">
-                        Hi there! 👋 I'm a Software Development Engieneer from India with 3+ years of experience in
-                        backend development, data engineering and data analysis.
-                        I love to solve real life problems with programming.
+                        Hi there! 👋 I'm a Software Development Engineer from India with 3+ years of experience in
+                        backend development, data engineering, and data analysis.
+                        I love to solve real-life problems with programming.
                     </p>
                     <br>
                     <p class="about-text font-space-mono">
-                        I spend most of time on screen either learning new technologies or watching series. Currently I
+                        I spend most of my time on screen either learning new technologies or watching series. Currently, I
                         am exploring Machine Learning.
                     </p>
                     <br>
@@ -375,7 +375,7 @@
                     <p class="about-text interests-container">
                         Current Working Status : <b>SWE-2 @ Mobileum Inc.</b>
                     </p><br>
-                    <p id="view-count" class="about-text interests-container">Loading views...</p>
+                    <p id="view-count" class="about-text interests-container">Loading portfolio views...</p>
 
                 </div>
             </div>
@@ -525,7 +525,7 @@
             })
                 .then(response => response.json())
                 .then(data => {
-                    viewCountElement.innerText = `Views: ${data.views}`;
+                    viewCountElement.innerText = `Portfolio Views: ${data.views}`;
                     console.log(data.views);
                 })
                 .catch(error => {
