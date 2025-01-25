@@ -480,7 +480,15 @@
     </section>
     <section id="research" class="section py-20 bg-gray-100 dark:bg-gray-900">
         <div class="container mx-auto px-4 max-w-6xl projects-container">
-            <h1 class="text-3xl font-bold mb-12 text-center font-space-mono">Research</h1>
+            <h1 class="text-3xl font-bold mb-12 text-center font-space-mono">Research Work</h1>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project tiles will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+    <section id="blogs" class="section py-20 bg-gray-100 dark:bg-gray-900">
+        <div class="container mx-auto px-4 max-w-6xl projects-container">
+            <h1 class="text-3xl font-bold mb-12 text-center font-space-mono">Blogs</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project tiles will be dynamically inserted here -->
             </div>
@@ -675,6 +683,41 @@
                 url: "https://www.cerebry.co/"
             }
         ]
+
+        const blogs = [
+            {
+                title: "Importance of Feature Scaling in Machine Learning",
+                description: "Feature scaling in machine learning is a data preprocessing technique that standardizes the values of features in a dataset to a common scale. This process can significantly improve the performance of machine learning models by making it easier for algorithms to find the optimal solution.",
+                image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*mwSkAfyMybk5HwhJ",
+                url: "https://tanishq0917t.medium.com/importance-of-feature-scaling-in-machine-learning-88b249845117"
+            },
+            {
+                title: "Online Compiler — Demonstration of SubProcess",
+                description: "As a software developer, to achieve this position every individual has to go through various Data structure and Algorithm problems. We grill Leetcode, Codeforces, Codechef, HackerEarth, and N number of platforms. But I wondered how these platforms can compile 20–30 programming language codes and provide the results respectively.",
+                image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*z-siVD_CUklwsjMJ.jpeg",
+                url: "https://tanishq0917t.medium.com/online-compiler-demonstration-of-subprocess-7a961eef6536"
+            },
+            {
+                title: "Interview Experience @ Mobileum",
+                description: "My interview experience at Mobileum<br>[Jun-July Process - 2022]",
+                image: "assets/mobileum.jpeg",
+                url: "https://tanishq0917t.medium.com/interview-experience-mobileum-6fbbdac7fc9e"
+            },
+            {
+                title: "Creating C/C++ library for Linux",
+                description: "In this blog, I will demonstrate creating library for Linux. In learning phase we create many functions, structures, classes which can help us in future task’s also. Such as we need to find whether a string is palindromic or not, so why to write this code again, just create a function in library and call it.",
+                image: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*1jQWMlRFoiILRoFrKV0vOA.png",
+                url: "https://tanishq0917t.medium.com/creating-c-c-library-for-linux-c1f4afd79229"
+            },
+            {
+                title: "Introduction to Network Programming (Socket Programming)",
+                description: "If you want to make two systems communicate then the communication mechanism between two systems using TCP, can be established using Sockets and is known as Socket Programming (Network Programming)",
+                image: "https://www.boardinfinity.com/blog/content/images/2023/02/Socket-Programming.png",
+                url: "https://tanishq0917t.medium.com/introduction-to-network-programming-socket-programming-95f88335adfb"
+            },
+            
+        ]
+
         // Function to create project tiles
         function createProjectTiles() {
             const projectsContainer = document.querySelector('#projects .grid');
@@ -757,9 +800,34 @@
             });
             lucide.createIcons();
         }
+        function createBlogTiles() {
+            const researchContainer = document.querySelector('#blogs .grid');
+            blogs.forEach(project => {
+                const tile = document.createElement('div');
+                tile.className = 'project-tile';
+                tile.innerHTML = `
+                    <div class="project-thumbnail mb-4">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                        <div class="redirect-icon">
+                            <i data-lucide="external-link"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">${project.description}</p>
+                    <a href="${project.url}" target="_blank" class="read-more">
+                        find more
+                    </a>
+                `;
+                const thumbnail = tile.querySelector('.project-thumbnail');
+                thumbnail.addEventListener('click', () => window.open(project.url, '_blank'));
+                researchContainer.appendChild(tile);
+            });
+            lucide.createIcons();
+        }
         createProjectTiles();
         createResearchTiles();
         createExperienceTiles();
+        createBlogTiles();
 
     </script>
 </body>
